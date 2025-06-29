@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p>What is the mascot for {{ team }}</p>
+
+{% for mascot_option in all_mascots %}
+<form action="{% if mascot_option == mascot %}/correct{% else %}/incorrect{% endif %}">
+    <button type="submit">
+        {{ mascot_option }}
+    </button>
+</form>
+<br>
+{% endfor %}
+{% endblock %}
